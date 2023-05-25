@@ -18,7 +18,7 @@ class CategoriaView(SinPrivilegios,generic.ListView):
     context_object_name = "obj"
     
 
-class CategoriaNew(SuccessMessageMixin,SinPrivilegios,generic.CreateView):
+class CategoriaNew(SuccessMessageMixin,LoginRequiredMixin,generic.CreateView):
     model=Categoria
     template_name="inv/categoria_form.html"
     context_object_name = "obj"
